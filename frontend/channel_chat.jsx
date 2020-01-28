@@ -8,7 +8,19 @@ import { signup, login, logout } from './actions/session_actions';
 // Testing end
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = {
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
+      },
+      session: { id: window.currentUser.id }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
   // Testing start
   // window.login = sessionApiUtil.login;
   // window.signup = sessionApiUtil.signup;
