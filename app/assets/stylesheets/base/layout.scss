@@ -18,6 +18,11 @@ main {
 //   height: 100%;
 // }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .button-main {
   display: inline-block;
   border: none;;
