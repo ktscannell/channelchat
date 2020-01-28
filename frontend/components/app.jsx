@@ -8,11 +8,14 @@ import SignupFormContainer from './session_form/signup_form_container';
 const App = () => (
   <div>
     <header>
-      <h1>channelchat</h1>
-      <GreetingContainer />
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
+      <div className="header-container">
+        <h1>channelchat</h1>
+        <GreetingContainer />
+      </div>
     </header>
+    
+    <AuthRoute path="/login" component={LoginFormContainer} />
+    <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
 );
 
