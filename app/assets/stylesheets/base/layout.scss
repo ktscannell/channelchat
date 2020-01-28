@@ -1,6 +1,11 @@
 h1 {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 1000;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 main {
@@ -16,9 +21,8 @@ main {
 .button-main {
   display: inline-block;
   border: none;;
-  margin-left: 10px;
-  padding: 6px;
-  border-radius: 3px;
+  padding: 10px;
+  border-radius: 4px;
   text-decoration: none;
   background: $purple;
   color: #ffffff;
