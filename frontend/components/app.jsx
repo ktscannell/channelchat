@@ -10,7 +10,7 @@ const App = () => (
   <div>
     <header>
       <div className="header-container">
-        <Link to="/"><h1>channelchat</h1></Link>
+        <Link to="/"><h1>ChannelChat</h1></Link>
         <GreetingContainer />
       </div>
     </header>
