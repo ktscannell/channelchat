@@ -1,6 +1,15 @@
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
 a {
   text-decoration: none;
   color: black;
+}
+
+button > a {
+  color: white;
 }
 
 span, button.header-button, a {
@@ -18,8 +27,5 @@ header-name {
 
 .button-greeting {
   margin-left: 20px;
-}
-
-.header-button {
-  color: #fff;
+  margin-bottom: 0px;
 }

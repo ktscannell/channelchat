@@ -20,7 +20,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user).then(() => this.props.history.push("/channels"));;
   }
 
   handleDemoLogin(e) {
@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
       username: 'Demo User',
       password: 'hunter12'
     }
-    this.props.processForm(user);
+    this.props.processForm(user).then(() => this.props.history.push("/channels"));
   }
 
   renderErrors() {
@@ -47,10 +47,8 @@ class SessionForm extends React.Component {
   render() {
     let demoLoginButton;
     if (this.props.formType === "Log In") {
-      demoLoginButton = 
-        <button onClick={this.handleDemoLogin} className="button-main">
-          Continue as Demo User
-        </button>;
+      demoLoginButton = <button onClick={this.handleDemoLogin} 
+        className="button-main button-session">Continue as Demo User</button>;
     }
 
     return (
@@ -72,8 +70,9 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 className="login-input" />
             
-            <button onClick={this.handleSubmit} className="button-main">Continue</button>
-            {demoLoginButton}
+            <button onClick={this.handleSubmit} 
+              className="button-main button-session">Continue</button>
+              {demoLoginButton}
           </div>
         </form>
       </div>
