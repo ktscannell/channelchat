@@ -41,6 +41,10 @@ button.button-main {
   font-size: 20px;
 }
 
+button.button-main:first-of-type {
+  margin-bottom: 20px;
+}
+
 .login-input:first-child {
   margin-bottom: 0;
   margin-top: 10px;

@@ -8,6 +8,7 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   update(field) {
@@ -19,6 +20,15 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+  }
+
+  handleDemoLogin(e) {
+    e.preventDefault();
+    const user = {
+      username: 'Demo User',
+      password: 'hunter12'
+    }
     this.props.processForm(user);
   }
 
@@ -35,9 +45,17 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let demoLoginButton;
+    if (this.props.formType === "Log In") {
+      demoLoginButton = 
+        <button onClick={this.handleDemoLogin} className="button-main">
+          Continue as Demo User
+        </button>;
+    }
+
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+        <form className="login-form-box">
           <h1>{this.props.formType}</h1>
           {this.renderErrors()}
           <div className="login-form">
@@ -54,7 +72,8 @@ class SessionForm extends React.Component {
                 onChange={this.update('password')}
                 className="login-input" />
             
-            <button className="button-main">Continue</button>
+            <button onClick={this.handleSubmit} className="button-main">Continue</button>
+            {demoLoginButton}
           </div>
         </form>
       </div>
