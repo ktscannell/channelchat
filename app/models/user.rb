@@ -19,6 +19,18 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
+  has_many :authored_messages,
+    foreign_key: :author_id,
+    class_name: 'Message'
+
+  has_many :channel_memberships,
+    foreign_key: :member_id,
+    class_name: 'ChannelMembership'
+
+  has_many :channels,
+    through: :channel_memberships,
+    source: :channel
+
   def self.find_by_credentials(username, password)
     user = self.find_by(username: username)
     user && user.is_password?(password) ? user : nil
