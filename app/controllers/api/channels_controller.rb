@@ -1,6 +1,8 @@
 class Api::ChannelsController < ApplicationController
   def index
-    @channels = current_user.channels
+    # @channels = current_user.channels
+    # Using below for testing with postman
+    @channels = Channel.all
   end
 
   def show
