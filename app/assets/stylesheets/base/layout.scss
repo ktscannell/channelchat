@@ -31,12 +31,10 @@ html, body {
   text-decoration: none;
   background: $purple;
   color: #ffffff;
-  font-family: sans-serif;
   font-size: 1rem;
   line-height: 1;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -44,11 +42,6 @@ html, body {
 .button-main:hover,
 .button-main:focus {
   background: $dark-purple;
-}
-
-.button-main:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
 }
 
 .button-main:active {

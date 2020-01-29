@@ -4,12 +4,11 @@ import GreetingContainer from '../greeting/greeting_container';
 
 const Client = () => (
   <div className="client-container">
-    <header>
-      <div className="header-container">
-        <Link to="/"><h1>ChannelChat</h1></Link>
-        <GreetingContainer />
-      </div>
-    </header>
+    {/* <ClientHeader />
+    <Sidebar />
+    <Route exact path="/channels" component={ChannelSplash} />
+    <Route exact path="/channels/:channelId" component={ChannelShowContainer} />
+    <ChannelFormContainer /> */}
     <h1>Client Goes Here</h1>
   </div>
 );
