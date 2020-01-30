@@ -1,5 +1,4 @@
 import { RECEIVE_ALL_CHANNELS } from '../actions/channel_actions';
-import merge from 
 
 const channelReducer = ( state = {}, action) => {
   Object.freeze(state);
