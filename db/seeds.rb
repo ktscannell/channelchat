@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker';
+
+10.times do 
+  Channel.create(
+    title: Faker::Movies::StarWars.planet,
+    description: Faker::Movies::StarWars.wookiee_sentence
+  )
+end
+
+User.create(
+  username: 'Demo User',
+  password: 'hunter12'
+)
