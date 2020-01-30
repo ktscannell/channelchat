@@ -1,0 +1,58 @@
+.sidebar {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 220px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  // z-index: 1; /* Stay on top */
+  // top: 0; /* Stay at the top */
+  // left: 0;
+  background-color: $dark-purple; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 10px;
+}
+
+.sidebar-header > h1 {
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.sidebar-header {
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 5px 0 5px 15px;
+}
+
+.sidebar > h4 {
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+// .sidebar, .sidebar-link {
+//   letter-spacing: 1px;
+// }
+
+.sidebar-link, .sidebar {
+  color: $muted;
+}
+
+.sidebar-link, .sidebar-header > h5, .sidebar-header > h4 {
+  font-size: 16px;
+}
+
+.sidebar > h4 {
+  font-weight: 700;
+}
+
+.sidebar-link:not(.active-channel-link):hover {
+  background-color: $darker-purple;
+}
+
+.active-channel-link {
+  background-color: $active-blue;
+  color: white;
+}

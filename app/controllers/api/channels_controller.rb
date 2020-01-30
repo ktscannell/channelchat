@@ -10,7 +10,7 @@ class Api::ChannelsController < ApplicationController
     if @channel
       render :show
     else
-      render json: ['This channel has been deleted'], status: 404
+      render json: ['This channel no longer exists'], status: 404
     end
   end
 

@@ -7,8 +7,8 @@ import SplashImg from './splash_img';
 import { AuthRoute } from '../../util/route_util';
 
 const Splash = () => (
-  <div>
-    <header>
+  <div className="splash">
+    <header className="splash-header">
       <div className="header-container">
         <Link to="/"><h1>ChannelChat</h1></Link>
         <GreetingContainer />

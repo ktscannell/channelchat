@@ -5,8 +5,9 @@ import Splash from './splash/splash';
 import Client from './client/client';
 
 const App = () => (
-  <div>
+  <div className="app">
     <Switch>
+      <ProtectedRoute path="/channels/:channelId" component={Client} />
       <ProtectedRoute path="/channels" component={Client} />
       <Route component={Splash} />
     </Switch>
