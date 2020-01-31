@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_SINGLE_CHANNEL } from '../actions/channel_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -7,6 +8,8 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { 
         [action.currentUser.id]: action.currentUser 
       });
+    case RECEIVE_SINGLE_CHANNEL:
+      return Object.assign({}, state, action.users)
     default:
       return state;
   }

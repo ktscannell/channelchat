@@ -14,16 +14,25 @@ require 'faker';
   )
 end
 
+10.times do
+  User.create(
+    username: Faker::Movies::StarWars.character,
+    password: 'hunter12'
+  )
+end
+
+Channel.all.each do |channel|
+  10.times do
+    character = User.all.sample
+    message = channel.messages.new
+    message.body = Faker::Movies::StarWars.quote()
+    message.author = character
+    message.save
+  end
+end
+
 User.create(
   username: 'Demo User',
   password: 'hunter12'
 )
-
-Channel.all.each do |channel|
-  10.times do 
-    channel.messages.create(
-      body: Faker::Movies::StarWars.quote,
-      author_id: 1
-  )
-  end
-end
+# Faker::Movies::StarWars.quote(character: "leia_organa")

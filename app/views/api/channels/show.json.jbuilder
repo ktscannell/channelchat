@@ -9,3 +9,12 @@ json.messages do
     end
   end
 end
+
+json.users do
+  @channel.messages.each do |message|
+    author = message.author
+    json.set! author.id do
+      json.extract! author, :id, :username
+    end
+  end
+end

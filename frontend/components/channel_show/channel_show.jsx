@@ -15,7 +15,11 @@ class ChannelShow extends React.Component {
 
   render () {
     const list = this.props.messages.map(message => (
-      <li key={message.id}>{message.body}</li>
+      <li key={message.id} className="message-container">
+        {/* <img src="" alt=""/> */}
+        <h4>{message.author}</h4>
+        <p>{message.body}</p>
+      </li>
     ));
     return (
       <ul className="messages-list">{list}</ul>
