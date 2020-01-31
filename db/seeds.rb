@@ -18,3 +18,12 @@ User.create(
   username: 'Demo User',
   password: 'hunter12'
 )
+
+Channel.all.each do |channel|
+  10.times do 
+    channel.messages.create(
+      body: Faker::Movies::StarWars.quote,
+      author_id: 1
+  )
+  end
+end

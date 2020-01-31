@@ -6,11 +6,11 @@ class Api::ChannelsController < ApplicationController
   end
 
   def show
-    @channel = Channel.find_by(id: params[:channel_id])
+    @channel = Channel.find_by(id: params[:id])
     if @channel
       render :show
     else
-      render json: ['This channel no longer exists'], status: 404
+      render json: ['not found'], status: 404
     end
   end
 

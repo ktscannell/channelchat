@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 // TESTING START
 // import { fetchAllChannels } from './util/channel_api_util'
-import { requestAllChannels } from './actions/channel_actions';
+import { requestSingleChannel } from './actions/channel_actions';
 // TESTING END
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // TESTING START
   window.dispatch = store.dispatch;
-  window.requestAllChannels = requestAllChannels;
+  window.requestSingleChannel = requestSingleChannel;
   // TESTING END
   
   const root = document.getElementById('root');

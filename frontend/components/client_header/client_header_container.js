@@ -4,10 +4,8 @@ import ClientHeader from './client_header';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-  const currentChannel = 
-    state.entities.channels[ownProps.match.params.channelId]
   return {
-    channel: currentChannel
+    channel: state.entities.channels[ownProps.match.params.channelId]
   }
 };
 
