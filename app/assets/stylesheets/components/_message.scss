@@ -1,0 +1,25 @@
+.message-container {
+  padding: 8px 20px;
+  font-size: 15px;
+  display: flex;
+}
+
+.message-container:hover {
+  background-color: $off-white;
+}
+
+.message-container > img {
+  padding-right: 6px;
+  max-height: 42px;
+  max-width: 42px;
+  margin-top: -2px;
+  margin-left: -4px;
+}
+
+.message-text-container > h4 {
+  font-weight: 900;
+}
+
+.message-text-container {
+  line-height: 1.46668;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import MessageDetail from './message_detail';
 
 class ChannelShow extends React.Component {
   componentDidMount() {
@@ -14,16 +15,15 @@ class ChannelShow extends React.Component {
   }
 
   render () {
-    const list = this.props.messages.map(message => (
-      <li key={message.id} className="message-container">
-        {/* <img src="" alt=""/> */}
-        <h4>{message.author}</h4>
-        <p>{message.body}</p>
-      </li>
-    ));
-    return (
-      <ul className="messages-list">{list}</ul>
-    )
+    const { messages, authors } = this.props;
+    
+    const list = messages.map(message => {
+      const author = authors[message.author_id];
+      return (
+        <MessageDetail key={message.id} message={message} author={author} />
+      );
+    });
+    return <ul className="messages-list">{list}</ul>;
   }
 }
 

@@ -9,7 +9,7 @@ const usersReducer = (state = {}, action) => {
         [action.currentUser.id]: action.currentUser 
       });
     case RECEIVE_SINGLE_CHANNEL:
-      return Object.assign({}, state, action.users)
+      return Object.assign({}, state, action.payload.users)
     default:
       return state;
   }

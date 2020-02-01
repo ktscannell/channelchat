@@ -4,7 +4,8 @@ import { requestSingleChannel } from '../../actions/channel_actions';
 import ChannelShow from './channel_show';
 
 const mapStateToProps = (state, { match: { params: { channelId }}}) => ({
-  messages: selectChannelMessages(state, state.entities.channels[channelId])
+  messages: selectChannelMessages(state, state.entities.channels[channelId]),
+  authors: state.entities.users
 });
 
 const mapDispatchToProps = (dispatch) => ({
