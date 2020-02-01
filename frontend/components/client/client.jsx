@@ -2,6 +2,7 @@ import React from 'react';
 import SidebarContainer from '../sidebar/sidebar_container';
 import ClientHeaderContainer from '../client_header/client_header_container';
 import ChannelShowContainer from '../channel_show/channel_show_container';
+import MessageFormContainer from '../message_form/message_form_container';
 import { Route } from 'react-router-dom';
 
 const Client = () => (
@@ -10,8 +11,8 @@ const Client = () => (
     <main className="client-main">
       <ClientHeaderContainer />
       <Route exact path="/channels/:channelId" component={ChannelShowContainer} />
-      {/* <Route exact path="/channels" component={ChannelSplash} />
-      <ChannelFormContainer /> */}
+      {/* <Route exact path="/channels" component={ChannelSplash} /> */}
+      <Route exact path="/channels/:channelId" component={MessageFormContainer} />
     </main>
   </div>
 );

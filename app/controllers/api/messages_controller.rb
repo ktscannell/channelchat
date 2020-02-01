@@ -1,8 +1,9 @@
 class Api::MessagesController < ApplicationController
   def create
-    @message = current_user.messages.new(message_params)
+    @message = current_user.authored_messages.new(message_params)
     if @message.save
       # this is where I will use action cable
+      render :show
     else
       render json: @message.errors.full_messages, status: 422
     end

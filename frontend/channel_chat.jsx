@@ -5,6 +5,7 @@ import configureStore from './store/store';
 // TESTING START
 // import { fetchAllChannels } from './util/channel_api_util'
 import { requestSingleChannel } from './actions/channel_actions';
+import { createMessage } from './util/message_api_util';
 // TESTING END
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TESTING START
+  window.createMessage = createMessage; 
   window.dispatch = store.dispatch;
   window.requestSingleChannel = requestSingleChannel;
   // TESTING END

@@ -16,7 +16,6 @@ class ChannelShow extends React.Component {
 
   render () {
     const { messages, authors } = this.props;
-    
     const list = messages.map(message => {
       const author = authors[message.author_id];
       return (
