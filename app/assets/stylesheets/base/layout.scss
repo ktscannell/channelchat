@@ -18,9 +18,9 @@ main {
 //   height: 100%;
 // }
 
-html, body {
+html, body, .app, .client {
   max-width: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 .button-main {
