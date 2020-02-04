@@ -2,7 +2,7 @@ class Api::ChannelsController < ApplicationController
   def index
     # @channels = current_user.channels
     # Using below for time being
-    @channels = Channel
+    @channels = Channel.all
   end
 
   def show
