@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_CHANNELS, RECEIVE_SINGLE_CHANNEL } from '../actions/channel_actions';
+import { RECEIVE_MESSAGE } from '../actions/message_actions';
 import merge from 'lodash/merge';
 const channelReducer = ( state = {}, action) => {
   Object.freeze(state);
@@ -10,7 +11,13 @@ const channelReducer = ( state = {}, action) => {
       return action.channels;
     case RECEIVE_SINGLE_CHANNEL:
       channel = action.payload.channel;
-      return Object.assign({}, state, { [channel.id]: channel })
+      return Object.assign({}, state, { [channel.id]: channel });
+    case RECEIVE_MESSAGE:
+      // Add the message id to the channel's array of messages ids
+      const nextState = Object.assign({}, state); 
+      nextState[action.payload.message.channel_id].message_ids
+        .push(action.payload.message.id);
+      return nextState;
     default:
       return state;
   }

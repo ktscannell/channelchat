@@ -1,7 +1,7 @@
 class Api::ChannelsController < ApplicationController
   def index
     # @channels = current_user.channels
-    # Using below for testing with postman
+    # Using below for time being
     @channels = Channel.all
   end
 

@@ -3,6 +3,7 @@ export const selectAllChannels = state => (
 );
 
 export const selectChannelMessages = (state, channel) => {
+  // debugger;
   return channel ? channel.message_ids.map(id => state.entities.messages[id]) : [];
 };
 

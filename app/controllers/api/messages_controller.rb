@@ -1,11 +1,30 @@
 class Api::MessagesController < ApplicationController
   def create
-    @message = current_user.authored_messages.new(message_params)
-    if @message.save
-      # this is where I will use action cable
-      render :show
+    message = current_user.authored_messages.new(message_params)
+    room = Channel.find(message_params[:channel_id])
+    if message.save
+      
+      message_hash = {
+        author_id: message.author_id,
+        body: message.body,
+        id: message.id,
+        channel_id: message.channel_id
+      }
+      
+      author = message.author
+      user_hash = {
+        id: author.id,
+        username: author.username
+      }
+
+      MessagesChannel.broadcast_to( 
+        room, 
+        message: message_hash,
+        author: user_hash
+      )
+      head :ok
     else
-      render json: @message.errors.full_messages, status: 422
+      render json: message.errors.full_messages, status: 422
     end
   end
 
