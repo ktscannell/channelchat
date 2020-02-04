@@ -1,13 +1,16 @@
 .client-main {
-  margin-left: 220px;
-  flex-basis: 100;
-  flex-grow: 100;
+  // margin-left: 220px;
+  // flex-basis: 100;
+  // flex-grow: 100;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .client {
   display: flex;
-  // width: 100vw;
-  // height: 100vh;
+  height: 100%;
 }
 
 .client-header {
@@ -23,10 +26,9 @@
 }
 
 .messages-list {
-  // overflow-y: auto;
-  // position: absolute;
-  // top: 50px;
-  // bottom: 150px;
+  flex: 1;
+  overflow-y: scroll;
+  height: 80%;
 }
 
 .client-header > h1 {

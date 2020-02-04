@@ -11,7 +11,6 @@ const Client = () => (
     <main className="client-main">
       <ClientHeaderContainer />
       <Route exact path="/channels/:channelId" component={ChannelShowContainer} />
-      {/* <Route exact path="/channels" component={ChannelSplash} /> */}
       <Route exact path="/channels/:channelId" component={MessageFormContainer} />
     </main>
   </div>

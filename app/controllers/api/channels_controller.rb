@@ -2,11 +2,11 @@ class Api::ChannelsController < ApplicationController
   def index
     # @channels = current_user.channels
     # Using below for time being
-    @channels = Channel.all
+    @channels = Channel
   end
 
   def show
-    @channel = Channel.find_by(id: params[:id])
+    @channel = Channel.includes(messages: :author).find_by(id: params[:id])
     if @channel
       render :show
     else
