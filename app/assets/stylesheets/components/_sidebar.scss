@@ -10,7 +10,7 @@
   padding-top: 10px;
 }
 
-.sidebar-header > h1 {
+.sidebar-header h1 {
   font-size: 20px;
   font-weight: 900;
   color: white;
@@ -27,7 +27,7 @@
   padding: 5px 0 5px 15px;
 }
 
-.sidebar > h4 {
+.sidebar h4 {
   padding-bottom: 5px;
   padding-left: 15px;
 }
@@ -40,11 +40,11 @@
   color: $muted;
 }
 
-.sidebar-link, .sidebar-header > h5, .sidebar-header > h4 {
+.sidebar-link, .sidebar-header h5, .sidebar-header  h4 {
   font-size: 16px;
 }
 
-.sidebar > h4 {
+.sidebar h4 {
   font-weight: 700;
 }
 

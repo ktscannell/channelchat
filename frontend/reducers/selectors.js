@@ -1,5 +1,9 @@
 export const selectAllChannels = state => (
-  Object.values(state.entities.channels)
+  Object.values(state.entities.channels).filter(channel => !channel.direct)
+);
+
+export const selectAllDirectChannels = state => (
+  Object.values(state.entities.channels).filter(channel => channel.direct)
 );
 
 export const selectChannelMessages = (state, channel) => {

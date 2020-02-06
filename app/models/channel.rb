@@ -10,9 +10,8 @@
 #
 
 class Channel < ApplicationRecord
-  # All channels have a title and description, unless they are direct chats
-  # Direct chats are channels that have no title or description
   validates :title, uniqueness: true, allow_nil: true
+  validates :direct, inclusion: { in: [true, false] }
 
   has_many :messages,
     foreign_key: :channel_id,
@@ -26,4 +25,17 @@ class Channel < ApplicationRecord
     through: :channel_memberships,
     source: :member
 
+  # direct chats don't have a title in the database
+  # instead, generate a title that is unique to the current user
+  def generate_direct_chat_title(current_user)
+    other_members = self.members.reject { |member| member == current_user }
+    if other_members.length == 1
+      other_members.first.username
+    elsif other_members.length == 2
+      "#{other_members.first.username} and 1 other"
+    else
+      number_to_display = other_members.length - 1
+      "#{other_members.first.username} and #{number_to_display} others"
+    end
+  end
 end
