@@ -11,3 +11,11 @@ export const fetchSingleChannel = (channelId) => (
     url: `api/channels/${channelId}`
   })
 );
+
+export const createDirectMessage = (channel) => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/channels',
+    data: { channel }
+  })
+);

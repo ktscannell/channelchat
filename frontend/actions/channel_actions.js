@@ -28,3 +28,10 @@ export const requestSingleChannel = channelId => dispatch => (
   APIUtil.fetchSingleChannel(channelId)
     .then(payload => dispatch(receiveSingleChannel(payload)))
 );
+
+// No dispatching needed on success, since actioncable
+// Will send the data back to the appropriate subscribers
+// Note: error handling could be added
+export const createDirectMessage = userIds => dispatch => (
+  APIUtil.createDirectMessage(userIds)
+);

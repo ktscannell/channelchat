@@ -19,3 +19,7 @@ export const selectCurrentChannel = (state, id) => {
     return null;
   }
 }
+
+export const selectAllOtherUsers = state => {
+  Object.values(state.entities.user).filter(user => user.id !== state.session.id)
+}
