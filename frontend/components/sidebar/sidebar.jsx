@@ -62,8 +62,8 @@ class Sidebar extends React.Component {
             <Link to="/directChannels/new">
               <i className="fas fa-plus-circle"></i>
             </Link>
-            <ul className="channels-list">{directList}</ul>
           </div>
+          <ul className="channels-list">{directList}</ul>
         </section>
       </div>
     );

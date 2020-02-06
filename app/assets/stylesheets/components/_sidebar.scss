@@ -25,6 +25,10 @@
 .sidebar-link {
   display: block;
   padding: 5px 0 5px 15px;
+  text-overflow: ellipsis;
+  // width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .sidebar h4 {
@@ -55,4 +59,14 @@
 .active-channel-link {
   background-color: $active-blue;
   color: white;
+}
+
+.dm-header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.fas {
+  color: $muted;
 }

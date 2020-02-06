@@ -4,6 +4,7 @@ import {
   RECEIVE_DIRECT_CHANNEL 
 } from '../actions/channel_actions';
 import { RECEIVE_MESSAGE } from '../actions/message_actions';
+import { RECEIVE_ALL_USERS } from '../actions/user_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -19,7 +20,9 @@ const usersReducer = (state = {}, action) => {
         [action.payload.author.id]: action.payload.author
       });
     case RECEIVE_DIRECT_CHANNEL:
-      return Object.assign({}, state, action.payload.users)
+      return Object.assign({}, state, action.payload.users);
+    case RECEIVE_ALL_USERS:
+      return Object.assign({}, state, action.users);
     default:
       return state;
   }
