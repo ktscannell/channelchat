@@ -59,7 +59,7 @@ class Sidebar extends React.Component {
         <section className="sidebar-section">
           <div className="dm-header">
             <h4>Direct Messages</h4>
-            <Link to="/directChannels/new">
+            <Link to="/directMessages/new">
               <i className="fas fa-plus-circle"></i>
             </Link>
           </div>

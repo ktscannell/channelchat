@@ -1,8 +1,8 @@
 class Api::ChannelsController < ApplicationController
   def index
-    # @channels = current_user.channels
+    @channels = current_user.channels
     # Using below for time being
-    @channels = Channel.all
+    # @channels = Channel.all
   end
 
   def show
@@ -18,24 +18,19 @@ class Api::ChannelsController < ApplicationController
     # for now, this is always a new direct message 'channel'
     # so it has no title or description
     
-    # channel = current_user.channels.new
+    channel = current_user.channels.new
     
     # Using this for testing only
-    channel = User.first.channels.new
+    # channel = User.first.channels.new
     # testing end
     channel.direct = true
     channel.save
-    
-    member_ids = JSON.parse(channel_params[:member_ids])
-    if member_ids.length >= 1
-      # Add each new member to the direct channel
-      member_ids.each do |member_id|
-        member = User.find(member_id)
-        channel.members << member
-      end
-     else
-      # if no member ids are sent up, render errors
-      render json: ['please choose someone to message'], status: 422
+    debugger
+    member_ids = params[:channel][:member_ids]
+    # Add each new member to the direct channel
+    member_ids.each do |member_id|
+      member = User.find(member_id)
+      channel.members << member
     end
   
     if channel.valid?
@@ -54,23 +49,23 @@ class Api::ChannelsController < ApplicationController
         message_ids: [].to_json,
         member_ids: member_ids_array.to_json
       }
-
+      
       channel.members.each do |member|
         ChannelsChannel.broadcast_to(
           member,
           members: members_hash,
           channel: channel_hash
         )
-      head :ok
       end
+      render json: channel.id
     else
       render json: channel.errors.full_messages, status: 422
     end
   end
 
-  private 
+  # private 
 
-  def channel_params
-    self.params.require(:channel).permit(:member_ids)
-  end
+  # def channel_params
+  #   self.params.require(:channel).permit(:member_ids)
+  # end
 end

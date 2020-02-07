@@ -21,5 +21,7 @@ export const selectCurrentChannel = (state, id) => {
 }
 
 export const selectAllOtherUsers = state => {
-  Object.values(state.entities.user).filter(user => user.id !== state.session.id)
+  // debugger;
+  return Object.values(state.entities.users)
+    .filter(user => user.id !== state.session.id);
 }

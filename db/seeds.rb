@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker';
 
-10.times do 
+5.times do 
   Channel.create(
     title: Faker::Movies::StarWars.planet,
     description: Faker::Movies::StarWars.wookiee_sentence
@@ -35,5 +35,11 @@ User.create(
   username: 'Demo User',
   password: 'hunter12'
 )
+
+Channel.all.each do |channel|
+  User.all.each do |user|
+    user.channels << channel
+  end
+end
 
 

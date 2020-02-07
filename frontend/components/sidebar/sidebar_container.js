@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
-import { requestAllChannels } from '../../actions/channel_actions';
+import { 
+  requestAllChannels,
+  receiveDirectChannel 
+} from '../../actions/channel_actions';
 import { 
   selectAllChannels,
   selectAllDirectChannels 
@@ -13,7 +16,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestAllChannels: () => dispatch(requestAllChannels())
+  requestAllChannels: () => dispatch(requestAllChannels()),
+  receiveDirectChannel: channel => dispatch(receiveDirectChannel(channel))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
