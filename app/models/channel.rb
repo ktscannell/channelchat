@@ -27,8 +27,9 @@ class Channel < ApplicationRecord
 
   # direct chats don't have a title in the database
   # instead, generate a title that is unique to the current user
-  def generate_direct_chat_title(current_user)
-    other_members = self.members.reject { |member| member == current_user }
+  def generate_direct_chat_title(current_member)
+    
+    other_members = self.members.reject { |member| member == current_member }
     if other_members.length == 1
       other_members.first.username
     elsif other_members.length == 2

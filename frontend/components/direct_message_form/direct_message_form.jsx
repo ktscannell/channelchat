@@ -33,16 +33,17 @@ class DirectMessageForm extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     const directChannel = Object.assign({}, this.state);
-    debugge
-    this.props.createDirectMessage(directChannel);
+    this.props.createDirectMessage(directChannel)
+      .then(id => this.props.history.push(`/channels`));
   }
 
   render () {
     const list = this.props.users.map(user => {
       return (
-        <li key={user.id} data-key={user.id} onClick={this.handleClick}>
+        <li key={user.id} data-key={user.id} 
+          onClick={this.handleClick} className="user-detail">
           <img src={window.accountURL} />
-          <p>{user.username}</p>
+          <h4>{user.username}</h4>
         </li>
       );
     });
@@ -50,12 +51,18 @@ class DirectMessageForm extends React.Component {
       .map(user => user.username).join(', ');
 
     return (
-      <main className="direct-form-container">
-        <h1>Direct Messages</h1>
-        <Link to="/channels">X</Link>
-        <button onClick={this.handleSubmit}>Go</button>
-        <ul>{list}</ul>
-      </main>
+      <div className="direct-form-container">
+        <Link className="button-close" to="/channels">&times;</Link>
+        <main className="direct-form-box">
+          <header className="direct-form-header">
+            <h1>Direct Messages</h1>
+            <button className="button-main button-go" onClick={this.handleSubmit}>
+              Go
+            </button>
+          </header>
+          <ul className="users-list">{list}</ul>
+        </main>
+      </div>
     )
   }
 }
