@@ -19,14 +19,14 @@ class Api::ChannelsController < ApplicationController
     # so it has no title or description
     
     channel = Channel.new
-    # Using this for testing only
-    # channel = User.first.channels.new
-    # testing end
     channel.direct = true
     channel.save
+    
+    # Add each new member to the direct channel
     current_user.channels << channel
     member_ids = params[:channel][:member_ids]
-    # Add each new member to the direct channel
+
+    # channel.add_members(member_ids)
     member_ids.each do |member_id|
       member = User.find(member_id)
       channel.members << member

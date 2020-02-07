@@ -110,3 +110,8 @@ def generate_direct_chat_title(current_member)
 + JBuilder for generating json responses to API requests
 + Bcrypt for user authorization
 + Heroku for hosting the production website
+
+## Features
++ Sign up and log in with username and password
++ Create and receive messages in channels instantly, without refreshing the page
++ Create and recieve Direct Message conversations with individuals or groups

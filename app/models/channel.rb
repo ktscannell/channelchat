@@ -29,7 +29,8 @@ class Channel < ApplicationRecord
   # instead, generate a title that is unique to the current user
   def generate_direct_chat_title(current_member)
     other_members = self.members.reject { |member| member == current_member }
-    
+    other_members = other_members.sort_by(&:id)
+    # debugger
     if other_members.length == 1
       other_members.first.username
     elsif other_members.length == 2
@@ -37,6 +38,13 @@ class Channel < ApplicationRecord
     else
       number_to_display = other_members.length - 1
       "#{other_members.first.username} and #{number_to_display} others"
+    end
+  end
+  
+  def add_members(member_ids)
+    member_ids.each do |member_id|
+      member = User.find(member_id)
+      self.members << member
     end
   end
 end
