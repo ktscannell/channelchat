@@ -7,8 +7,6 @@ groups of users.
 
 [Live Site](https://channel-chat-heroku.herokuapp.com)
 
-![alt text](app/assets/images/screenshot-splash.png)
-
 This single-page app uses a React-Redux frontend that communicates with a Ruby 
 on Rails backend via JQuery ajax requests. 
 
