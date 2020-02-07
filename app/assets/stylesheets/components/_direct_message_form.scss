@@ -45,7 +45,6 @@
   display: flex;
   cursor: pointer;
   border-top: 1px solid $gray;
-  border-radius: 3px;
   align-items: center;
 }
 
@@ -54,7 +53,7 @@
 }
 
 .selected {
-  background-color: $muted;
+  background-color: $gray;
   color: $dark-gray;
 }
 
