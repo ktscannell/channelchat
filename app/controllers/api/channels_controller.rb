@@ -19,12 +19,12 @@ class Api::ChannelsController < ApplicationController
     # so it has no title or description
     
     channel = Channel.new
-    current_user.channels << channel
     # Using this for testing only
     # channel = User.first.channels.new
     # testing end
     channel.direct = true
     channel.save
+    current_user.channels << channel
     member_ids = params[:channel][:member_ids]
     # Add each new member to the direct channel
     member_ids.each do |member_id|
