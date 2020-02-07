@@ -1,7 +1,7 @@
 class Api::MessagesController < ApplicationController
   def create
     message = current_user.authored_messages.new(message_params)
-    room = Channel.find(message_params[:channel_id])
+    channel = Channel.find(message_params[:channel_id])
     if message.save
       
       message_hash = {
@@ -18,7 +18,7 @@ class Api::MessagesController < ApplicationController
       }
 
       MessagesChannel.broadcast_to( 
-        room, 
+        channel, 
         message: message_hash,
         author: user_hash
       )

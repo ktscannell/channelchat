@@ -11,7 +11,7 @@ class ChannelShow extends React.Component {
     App.cable.subscriptions.create(
       {
         channel: "MessagesChannel",
-        room: this.props.match.params.channelId
+        channelId: this.props.match.params.channelId
       },
       {
         received: message => {

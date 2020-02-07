@@ -1,9 +1,7 @@
 class MessagesChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
-    # here 'room' is an id that refers to an instance of the Channel model
-    room = Channel.find(params[:room])
-    stream_for room
+    channel = Channel.find(params[:channel_id])
+    stream_for channel
   end
 
   def unsubscribed
