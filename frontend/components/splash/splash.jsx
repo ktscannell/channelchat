@@ -10,7 +10,10 @@ const Splash = () => (
   <div className="splash">
     <header className="splash-header">
       <div className="header-container">
-        <Link to="/"><h1>ChannelChat</h1></Link>
+        <div className="masthead">
+          <img className="logo" src={window.iconURL} alt="Slack Logo"/>
+          <Link to="/"><h1>ChannelChat</h1></Link>
+        </div>
         <GreetingContainer />
       </div>
     </header> 
