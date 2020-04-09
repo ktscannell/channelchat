@@ -17,12 +17,23 @@ const Splash = () => (
         <GreetingContainer />
       </div>
     </header> 
-    <Switch>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route component={SplashImg} />
-    </Switch>
-    
+    <div className="splash-main-container">
+      <Switch>
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Route component={SplashImg} />
+      </Switch>
+      <footer className="footer">
+        <div className="copy">
+          <img className="footer-logo" src={window.iconURL} alt="Slack Logo" />
+          <span className="created-by footer-item">created by Kieran Scannell in 2020</span>
+        </div>
+        <a className="footer-item" href="http://kierantscannell.com" target="_blank">portfolio</a>
+        <a href="http://linkedin.com/in/kierantscannell/" target="_blank"><i className="fab fa-linkedin footer-icon"></i></a>
+        <a href="http://github.com/ktscannell" target="_blank"><i className="fab fa-github footer-icon"></i></a>
+        <a href="http://angel.co/u/kieran-scannell" target="_blank"><i className="fab fa-angellist footer-icon"></i></a>
+      </footer>
+    </div>
   </div>
 );
 

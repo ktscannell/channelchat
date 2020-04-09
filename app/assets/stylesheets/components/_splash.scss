@@ -4,7 +4,7 @@
 }
 
 .splash-container {
-  position: absolute;
+  position: relative;
 }
 
 .splash-title {
@@ -36,4 +36,43 @@
 
 .logo {
   margin-right: 10px;
+}
+
+.splash-main-container {
+  display:flex;
+  flex-direction: column;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  color: #454545;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+  font-weight: 700;
+  border-top: 2px solid $gray;
+}
+
+.footer > a {
+  color: #454545;
+}
+
+.footer > a:hover {
+  color: #1264a3;
+}
+
+.footer-item {
+  font-size: 14px;
+}
+
+.footer-logo {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
 }
