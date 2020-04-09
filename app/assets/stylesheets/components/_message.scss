@@ -8,12 +8,16 @@
   background-color: $off-white;
 }
 
-.message-container > img {
-  padding-right: 6px;
-  max-height: 42px;
-  max-width: 42px;
-  margin-top: -2px;
-  margin-left: -4px;
+i.fas.fa-user {
+  font-size: 34px;
+  color: white !important;
+  width: 34px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  border-radius: 3px;
 }
 
 .message-text-container > h4 {
