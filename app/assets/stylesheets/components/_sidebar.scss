@@ -8,6 +8,11 @@
   background-color: $dark-purple; /* Black */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-bottom: 10px;
 }
 
 .sidebar-header h1 {
@@ -77,4 +82,13 @@
 
 .sidebar-section {
   margin-bottom: 20px;
+}
+
+.sidebar-footer {
+  display: inline-block;
+  padding: 5px 8px 5px 8px !important;
+}
+
+.sidebar-footer:first-of-type {
+  margin-left: 7px;
 }

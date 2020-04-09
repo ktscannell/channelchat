@@ -45,26 +45,35 @@ class Sidebar extends React.Component {
 
     return (
       <div className="sidebar">
-        <hgroup className="sidebar-header">
-          <h1>ChannelChat</h1>
-          <h5>{currentUser.username}</h5>
-          {/* figure out how to render the green bubble for logged in */}
-        </hgroup>
+        <div className="sidebar-top">
+          <hgroup className="sidebar-header">
+            <h1>ChannelChat</h1>
+            <h5>{currentUser.username}</h5>
+            {/* figure out how to render the green bubble for logged in */}
+          </hgroup>
 
-        <section className="sidebar-section">
-          <h4>Channels</h4>
-          <ul className="channels-list">{list}</ul>
-        </section>
+          <section className="sidebar-section">
+            <h4>Channels</h4>
+            <ul className="channels-list">{list}</ul>
+          </section>
 
-        <section className="sidebar-section">
-          <div className="dm-header">
-            <h4>Direct Messages</h4>
-            <Link to="/directMessages/new">
-              <i className="fas fa-plus-circle"></i>
-            </Link>
-          </div>
-          <ul className="channels-list">{directList}</ul>
-        </section>
+          <section className="sidebar-section">
+            <div className="dm-header">
+              <h4>Direct Messages</h4>
+              <Link to="/directMessages/new">
+                <i className="fas fa-plus-circle"></i>
+              </Link>
+            </div>
+            <ul className="channels-list">{directList}</ul>
+          </section>
+        </div>
+        <div className="sidebar-bottom">
+          <h4>Made by Kieran Scannell</h4>
+          <a className="sidebar-link sidebar-footer" href="http://kierantscannell.com" target="_blank">portfolio</a>
+          <a className="sidebar-footer sidebar-link" href="http://linkedin.com/in/kierantscannell/" target="_blank"><i className="fab fa-linkedin"></i></a>
+          <a className="sidebar-footer sidebar-link" href="http://github.com/ktscannell" target="_blank"><i className="fab fa-github"></i></a>
+          <a className="sidebar-footer sidebar-link" href="http://angel.co/u/kieran-scannell" target="_blank"><i className="fab fa-angellist"></i></a>
+        </div>
       </div>
     );
   }
